@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js"></script>
+
+<script type="text/babel">
+	function Hola(props){
+		const name=props.name;
+		const count=props.count;
+
+	return(
+		<h1 id='Title'> Hola {name}</h1>
+	)
+		// return React.DOM.h1({
+		// 	id:'Title',
+		// },`Hola ${name} ${count}`);
+	}
+
+	// const hola=React.createElement(Hola, 
+	// 	{name:'Platzi'});
+
+	ReactDOM.render(
+		<Hola name="Platzi"/>,
+		document.getElementById('app')
+	);
+	var entero=0;
+	setTimeout(
+		()=>{
+			ReactDOM.render(
+				React.createElement(Hola,{name:'Platzi!',count:++entero}),
+				document.getElementById('app'))
+		},1000
+	);
+</script>
+</body>
+</html>
